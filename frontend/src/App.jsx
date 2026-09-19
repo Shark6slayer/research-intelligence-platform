@@ -34,6 +34,7 @@ function App() {
   const [graphContext, setGraphContext] = useState(null);
   const [mmrEvaluation, setMmrEvaluation] = useState(null);
   const [pipeline, setPipeline] = useState(null);
+  const [backendAvailable, setBackendAvailable] = useState(true);
 
   // ==========================================================
   // LIVE RECOMMENDATION SEARCH
@@ -61,9 +62,10 @@ function App() {
     fetch(`${API}/api/overview`)
       .then((response) => response.json())
       .then((data) => setOverview(data))
-      .catch((error) =>
-        console.error("ARI overview error:", error)
-      );
+      .catch((error) => {
+  console.error("ARI overview error:", error);
+  setBackendAvailable(false);
+});
 
     fetch(`${API}/api/landscape`)
       .then((response) => response.json())
@@ -1923,7 +1925,7 @@ function LoadingCard() {
 
       <TrendingUp size={19} />
 
-      Loading ARI pipeline data...
+      ARI backend is currently unavailable.
 
     </div>
   );
