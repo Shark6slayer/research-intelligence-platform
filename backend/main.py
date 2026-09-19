@@ -1,5 +1,5 @@
 from pathlib import Path
-import sys
+import os
 import math
 import sys
 from pathlib import Path
@@ -17,7 +17,10 @@ from pydantic import BaseModel
 # ============================================================
 
 ARI_PROJECT = Path(
-    r"C:\autonomous-research-intelligence"
+    os.getenv(
+        "ARI_PROJECT_PATH",
+        str(Path(__file__).resolve().parent / "ari_engine")
+    )
 )
 
 ARI_SRC = ARI_PROJECT / "src"
