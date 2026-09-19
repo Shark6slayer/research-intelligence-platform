@@ -11,6 +11,20 @@ The React frontend is deployed on Render.
 
 The FastAPI backend is configured for deployment but currently requires a higher-memory runtime because the semantic recommendation engine loads the embedding model and research corpus into memory.
 
+## Screenshots
+
+### Research Intelligence Dashboard
+
+![Research Intelligence Dashboard](screenshots/dashboard.png)
+
+### Live Research Recommendations
+
+![Live Research Recommendations](screenshots/recommendations.png)
+
+### Research Intelligence Analysis
+
+![Research Intelligence Analysis](screenshots/analytics.png)
+
 ## Overview
 
 Research Intelligence Platform combines semantic search, research-topic clustering, trend detection, research intelligence scoring, knowledge-graph context, and diversity-aware recommendation into an interactive web application.
